@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Meta Suite Inbox Response Finder",
+  "version": "1.0",
+  "description": "Finds conversations that have been responded to by the page owner in Meta Suite Inbox",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://business.facebook.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://business.facebook.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
